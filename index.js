@@ -50,9 +50,8 @@ bot.on("message", async message => {
     //   if(err) console.log(err)
     // });
 
-    let prefix = prefixes[message.guild.id].prefixes;
 
-    //let prefix = botconfig.prefix;
+    let prefix = botconfig.prefix;
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
