@@ -5,7 +5,7 @@ bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     bot.user.setGame(`(!)pe ${bot.guilds.size} servere cu ${bot.users.size} useri(!)`)
 });
-
+//COMENZI
     let prefix = "!";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
@@ -79,16 +79,6 @@ bot.on("ready", async () => {
         message.channel.send(avatarEmbed);
         return;
     }
-
-    //USERID
-
-    if(cmd === `${prefix}myid`){
-
-        message.channel.send(`:id: <@${message.author.id}> ID-ul tau este acesta: ${message.author.id} :id:`);
-
-    return;
-}
-
 });
 
 bot.login(process.env.BOT_TOKEN);
