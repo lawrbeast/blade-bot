@@ -11,34 +11,6 @@ bot.on("ready", async () => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-//     if(cmd === `${prefix}report`){
-
-//         //!report @Blade Motiv
-
-//         let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-//         if(!rUser) return message.channel.send("Te rog sa introduci numele si motivul! ex:**(!report @Blade Motiv)**");
-//         let reason = args.join(" ").slice(22);
-
-
-//         let reportEmbed = new Discord.RichEmbed()
-//         .setDescription("Raporturi")
-//         .setColor("#0d1d38")
-//         .addField("User Raportat", `${rUser} cu ID: ${rUser.id}`)
-//         .addField("Raportat de", `${message.author} cu ID ${message.author.id}`)
-//         .addField("Channel", message.channel)
-//         .addField("Data raportarii", message.createdAt)
-//         .addField("Motiv", reason);
-
-//         let reportschannel = message.guild.channels.find(`name`, `modstuff`);
-//         if(!reportschannel) return message.channel.send("Nu gasesc channel-ul pentru report-uri!");
-
-
-//             message.delete().catch(O_o=>{});
-//             reportschannel.send(reportEmbed)
-
-//         return;
-//     }
-
     if(cmd === `${prefix}serverinfo`){
 
         let sicon = message.guild.iconURL;
@@ -74,64 +46,6 @@ bot.on("ready", async () => {
 
         return message.channel.send(botembed);
     }
-
-    //KICK COMMAND
-    if(cmd === `${prefix}kick`){
-
-    //     //!kick @daeshan askin for it
-
-    //     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    //     if(!kUser) return message.channel.send("Nu pot gasii acel user! :thinking: __(Te rog sa folosesti !kick @User Motiv!__)");
-    //     let kReason = args.join(" ").slice(22);
-    //     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu pot face asta! :frowning:");
-    //     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Acel user nu poate fi aruncat! :confused:");
-
-    //     let kickEmbed = new Discord.RichEmbed()
-    //     .setDescription("__**~Blade's Kick~**__")
-    //     .setColor("#0d1d38")
-    //     .addField("User aruncat", `${kUser} with ID ${kUser.id}`)
-    //     .addField("Aruncat de", `<@${message.author.id}> cu ID ${message.author.id}`)
-    //     .addField("Aruncat in", message.channel)
-    //     .addField("Data", message.createdAt)
-    //     .addField("Motiv", kReason)
-    //     .setFooter("**~Blade's Kick~** facut de qLau");
-
-    //     let kickChannel = message.guild.channels.find(`name`, "modstuff");
-    //     if(!kickChannel) return message.channel.send("Nu pot gasii channel-ul modstuff.");
-
-    //     message.guild.member(kUser).kick(kReason);
-    //     kickChannel.send(kickEmbed);
-
-    //     return;
-    }
-
-    //BAN COMMAND
-    if(cmd === `${prefix}ban`){
-
-        // let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        // if(!bUser) return message.channel.send("Nu pot gasii acel user! :thinking: __(Te rog sa folosesti !ban @User Motiv!__)");
-        // let bReason = args.join(" ").slice(22);
-        // if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("Nu pot face asta :frowning:");
-        // if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Acel user nu poate fi aruncat! :confused:");
-
-        // let banEmbed = new Discord.RichEmbed()
-        // .setDescription("~Ban~")
-        // .setColor("#bc0000")
-        // .addField("User banat", `${bUser} with ID ${bUser.id}`)
-        // .addField("Banat de", `<@${message.author.id}> with ID ${message.author.id}`)
-        // .addField("Banned In", message.channel)
-        // .addField("Data", message.createdAt)
-        // .addField("Motiv", bReason)
-        // .setFooter("**~Blade's Ban~** facut de qLau");
-
-        // let incidentchannel = message.guild.channels.find(`name`, "incidents");
-        // if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
-
-        // message.guild.member(bUser).ban(bReason);
-        // incidentchannel.send(banEmbed);
-    }
-
-    //HELP COMMAND
 
     if(cmd === `${prefix}help`){
 
