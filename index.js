@@ -10,42 +10,10 @@ bot.on("ready", async () => {
     bot.user.setGame(`(!)pe ${bot.guilds.size} servere cu ${bot.users.size} useri(!)`)
 });
 
-    // let xpAdd = Math.floor(Math.random() * 7)+ 8;
-    //
-    // if(!xp[message.author.id]){
-    //   xp[message.author.id] = {
-    //     xp: 0,
-    //     level: 1
-    //   };
-    // }
-    //
-    //
-    // let curxp = xp[message.author.id].xp;
-    // let curlvl = xp [message.author.id].level
-    // xp[message.author.id].xp = curxp +xpAdd;
-    // let nxtLvl = xp[message.author.id].level * 300;
-    //
-    // if(nxtLvl <= xp[message.author.id].xp){
-    //   xp[message.author.id].level = curlvl + 1;
-    //   let lvlup = new Discord.RichEmbed()
-    //   .setTitle("Felicitari! 🆙")
-    //   .setColor("#0d1d38")
-    //   .addField(`<@${message.author.username}> | Ai avansat la nivel:`, curlvl + 1)
-    //
-    //   message.channel.send(lvlup).then(msg => {msg.delete(15000)});
-    // }
-    // fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
-    //   if(err) console.log(err)
-    // });
-
-
     let prefix = "!";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
-
-    let commandfile = bot.commands.get(cmd.slice(prefix.length));
-    if(commandfile) commandfile.run(bot, message, args);
 
 //     if(cmd === `${prefix}report`){
 
