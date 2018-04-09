@@ -5,6 +5,7 @@ bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     bot.user.setGame(`(!)pe ${bot.guilds.size} servere cu ${bot.users.size} useri(!)`)
 });
+bot.on("ready", async () => {
 //COMENZI
     let prefix = "!";
     let messageArray = message.content.split(" ");
