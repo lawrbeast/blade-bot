@@ -10,18 +10,6 @@ bot.on("ready", async () => {
     bot.user.setGame(`(!)pe ${bot.guilds.size} servere cu ${bot.users.size} useri(!)`)
 });
 
-bot.on("message", async message => {
-    if(message.author.bot) return;
-    if(message.channel.type === "dm") return
-
-    let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-
-    if(!prefixes[message.guild.id]){
-        prefixes[message.guild.id] = {
-            prefixes: botconfig.prefix
-        };
-    }
-
     // let xpAdd = Math.floor(Math.random() * 7)+ 8;
     //
     // if(!xp[message.author.id]){
