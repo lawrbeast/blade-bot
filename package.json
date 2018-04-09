@@ -3,9 +3,6 @@
   "description": "Best Bot Ever",
   "version": "0.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
      "discord.js": "11.1.0"
    }
