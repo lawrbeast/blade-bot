@@ -113,7 +113,7 @@ if (msg.includes(`DISCORD.GG`)){
 		return
 	}
 	// VERIFICATION
-	if(msg.includes(`ACCEPT`){
+	if(msg.includes(`ACCEPT`)){
 	  	let role = message.guild.roles.find(`name`, `Member`);
 		member.addRole(role);
 	return
