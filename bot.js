@@ -13,7 +13,7 @@ bot.on("ready", async () => {
 bot.on("message", message => {
   if(message.channel.type === "dm") return
 
-    const prefix = "$";
+    const prefix = "w!";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let sender = message.author;
