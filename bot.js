@@ -112,6 +112,12 @@ if (msg.includes(`DISCORD.GG`)){
 		message.delete();
 		return
 	}
+	// VERIFICATION
+	if(msg.includes(`ACCEPT`){
+	  	let role = message.guild.roles.find(`name`, `Member`);
+		message.member.addRole(role);
+	return
+	   }
   });
   
 bot.login(process.env.BOT_TOKEN);
