@@ -1,10 +1,16 @@
 {
-  "name": "Blade",
-  "description": "Best Bot Ever",
-  "version": "0.0.0",
-  "main": "index.js",
-  "dependencies": {
-     "discord.js": "11.1.0"
-   }
-  }
+  "name": "WolvesZone",
+  "description": "Bot",
+  "version": "0.0.1",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+    },
+    "dependencies": {
+      "discord.js": "11.1.0",
+      "moment": "2.22.1",
+      "moment-duration-format": "2.2.2",
+      "request": "2.81.0"
+      }
+     }
   
