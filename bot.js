@@ -12,7 +12,7 @@ bot.on('guildMemberRemove', function(member){
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
     let online = message.guild.members.filter(member => member.user.presence.status !== 'offline');
-    message.guild.channels.get('443498050376433664').setName(`Membrii Online: ${online}`)
+    bot.guild.channels.get('443498050376433664').setName(`Membrii Online: ${online}`)
     bot.user.setPresence({ game: { name: `Prefix: w!help`, url: 'https://twitch.tv/qlau234', type: 1 } });
 });
 bot.on("message", message => {
