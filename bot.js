@@ -108,7 +108,8 @@ if(cmd === `${prefix}accept`){
 //RESPINS
 if(cmd === `${prefix}reject`){
 	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	message.channel.send(`${aUser} din pacate aplicatia ta a fost respinsa de catre **${message.author.tag}**.`)
+	let aReason =args.join(" ").slice(22);
+	message.channel.send(`${aUser} din pacate aplicatia ta a fost respinsa de catre **${message.author.tag}**.\nMotiv: ${aReason}`)
 	message.delete();
 	return;
 }
