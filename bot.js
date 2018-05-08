@@ -5,6 +5,7 @@ const bot = new Discord.Client();
 //
 bot.on('guildMemberAdd', function(member) {
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
+    member.guild.channels.get('443495906667528223').setName(`member.guild.members.filter(m => m.user.bot).size)`)	
   });
 bot.on('guildMemberRemove', function(member){
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
@@ -12,7 +13,7 @@ bot.on('guildMemberRemove', function(member){
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
     let online = member.guild.members.filter(member => member.user.presence.status !== 'offline');
-    member.guild.channels.get('443498050376433664').setName(`Members Online: ${online}`)
+    .guild.channels.get('443498050376433664').setName(`Members Online: ${online}`)
     bot.user.setPresence({ game: { name: `Prefix: w!help`, url: 'https://twitch.tv/qlau234', type: 1 } });
 });
 bot.on("message", message => {
