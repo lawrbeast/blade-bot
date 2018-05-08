@@ -102,7 +102,7 @@ if(cmd === `${prefix}accept`){
 	let acUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	message.channel.send(`${acUser} aplicatia ta a fost acceptata de catre **${message.author.tag}**.`)
 	acUser.addRole(acRole);
-	message.acUser.send("**Bun venit in staff-ul WolvesZone**\nFelicitari, ai fost acceptat(a) in staff-ul **WolvesZone**!\n\nReguli pe care trebuie sa le urmezi:\nNu ai voie sa ...\nTrebuie sa respecti membrii...\nNu ai voie sa...\nAi voie sa ...")
+	message.acUser("**Bun venit in staff-ul WolvesZone**\nFelicitari, ai fost acceptat(a) in staff-ul **WolvesZone**!\n\nReguli pe care trebuie sa le urmezi:\nNu ai voie sa ...\nTrebuie sa respecti membrii...\nNu ai voie sa...\nAi voie sa ...")
 	message.delete();
 	return;
 }
