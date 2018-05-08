@@ -122,7 +122,7 @@ if(cmd === `${prefix}accept`){
 	let aRole = message.guild.roles.find(`name`, `ASSISTANCE`);
 	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	message.channel.send(`${aUser} aplicatia ta a fost acceptata de catre **${message.author.tag}**.`)
-	await aUser.addRole(aRole);
+	aUser.addRole(aRole);
 	message.delete();
 	return;
 }
