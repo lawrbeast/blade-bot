@@ -5,10 +5,11 @@ const bot = new Discord.Client();
 //
 bot.on('guildMemberAdd', function(member) {
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
-    member.guild.channels.get('443495906667528223').setName(`member.guild.members.filter(m => m.user.bot).size)`)	
+    member.guild.channels.get('443498050376433664').setName(`member.guild.members.filter(m => m.user.bot).size)`);	
   });
 bot.on('guildMemberRemove', function(member){
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
+    member.guild.channels.get('443498050376433664').setName(`member.guild.members.filter(m => m.user.bot).size)`);
 });
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
