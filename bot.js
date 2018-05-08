@@ -9,7 +9,7 @@ bot.on('guildMemberAdd', function(member) {
   });
 bot.on('guildMemberRemove', function(member){
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
-    member.guild.channels.get('443502387966115875').setName(`${member.guild.members.filter(m => m.user.bot).size)}`);
+    member.guild.channels.get('443502387966115875').setName(`${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
