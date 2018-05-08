@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 //
 bot.on('guildMemberAdd', function(member) {
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
-    member.guild.channels.get('443502387966115875').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);	
+    member.guild.channels.get('443502387966115875').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
   });
 bot.on('guildMemberRemove', function(member){
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
@@ -117,6 +117,22 @@ if (msg.includes(`DISCORD.GG`)){
 		message.delete();
 		return
 	}
+	//ACCEPTAT
+if(cmd === `${prefix}accept`){
+	let aRole = message.guild.roles.find(`name`, `ASSISTANCE`);
+	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	message.channel.send(`${aUser} aplicatia ta a fost acceptata de catre **${message.author.tag}**.`)
+	await aUser.addRole(aRole);
+	message.delete();
+	return;
+}
+//RESPINS
+if(cmd === `${prefix}reject`){
+	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	message.channel.send(`${aUser} din pacate aplicatia ta a fost respinsa de catre **${message.author.tag}**.`)
+	message.delete();
+	return;
+}
   });
   
 bot.login(process.env.BOT_TOKEN);
