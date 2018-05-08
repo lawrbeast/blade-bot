@@ -96,6 +96,22 @@ if(cmd === `${prefix}serverinfo`){
    message.channel.send({embed});
 return;
 }
+	//ACCEPTAT
+if(cmd === `${prefix}accept`){
+	let acRole = message.guild.roles.find(`name`, `ASSISTANCE`);
+	let acUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	message.channel.send(`${acUser} aplicatia ta a fost acceptata de catre **${message.author.tag}**.`)
+	acUser.addRole(acRole);
+	message.delete();
+	return;
+}
+//RESPINS
+if(cmd === `${prefix}reject`){
+	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	message.channel.send(`${aUser} din pacate aplicatia ta a fost respinsa de catre **${message.author.tag}**.`)
+	message.delete();
+	return;
+}
 	//BOT STATS
 if(cmd === `${prefix}botstats`){
 	const duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
@@ -117,22 +133,6 @@ if (msg.includes(`DISCORD.GG`)){
 		message.delete();
 		return
 	}
-	//ACCEPTAT
-if(cmd === `${prefix}accept`){
-	let aRole = message.guild.roles.find(`name`, `ASSISTANCE`);
-	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	message.channel.send(`${aUser} aplicatia ta a fost acceptata de catre **${message.author.tag}**.`)
-	aUser.addRole(aRole);
-	message.delete();
-	return;
-}
-//RESPINS
-if(cmd === `${prefix}reject`){
-	let aUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	message.channel.send(`${aUser} din pacate aplicatia ta a fost respinsa de catre **${message.author.tag}**.`)
-	message.delete();
-	return;
-}
   });
   
 bot.login(process.env.BOT_TOKEN);
