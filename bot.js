@@ -2,6 +2,26 @@ const Discord = require('discord.js');
 const moment = require('moment');
 require("moment-duration-format");
 const bot = new Discord.Client();
+const fs = require("fs");
+bot.commands = new Discord.Collection();
+// COMMAND HANDLER 
+fs.readdir("./commands", (err, files) => {
+
+    if(err) console.log(err)
+
+    let jsfile = files.filter(f => f.split(".").pop() === "js")
+    if(jsfile.length <= 0){
+        console.log("Nu ai creat folder-ul commands!");
+        return;
+    }
+
+    jsfile.forEach((f, i) => {
+        let props = require(`./commands/${f}`)
+        console.log(`${f} loaded!`);
+        bot.commands.set(props.help.name, props);
+    });
+
+});
 //
 bot.on('guildMemberAdd', function(member) {
     member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
@@ -23,6 +43,11 @@ bot.on("message", message => {
     let cmd = messageArray[0];
     let sender = message.author;
     let args = messageArray.slice(1);
+	
+    if(!message.content.startsWith(prefix)) return;
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot, message, args);
+    if(!message.content.startsWith(`${prefix}`)) return
 	//COMMANDS
 if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
