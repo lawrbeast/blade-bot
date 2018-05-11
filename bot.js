@@ -66,8 +66,8 @@ if(cmd === `${prefix}color`){
 	let role = colors.find(role => role.name.slice(1).toLowerCase() === str.toLowerCase());
 
 	try {
-		await message.member.removeRoles(colors);
-		await message.member.addRole(role)
+		message.member.removeRoles(colors);
+		message.member.addRole(role)
 		message.channel.send(`Ai primit culoarea ${role}!`).then(msg => msg.delete(6500));
 		message.delete(6500);
 
