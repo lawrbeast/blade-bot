@@ -120,9 +120,9 @@ if(cmd === `${prefix}color`){
 		let embed = new Discord.RichEmbed()
 		.setColor("#fcfdff")
 		.setTitle("Legion's Commands")
-		.setDescription("$userinfo - Iti arata informatiile unui membru\n$avatar [@Legion Guard] - Iti arata avatarul tau sau al unui membru\n$serverinfo - Iti arata informatiile server-ului.\n$botstats - Iti arata informatiile bot-ului.")
-		.setFooter("Version 0.0.1 - PreAlpha")
-		message.author.send({embed}).then(msg => {message.channel.send('Ti-am trimis comenzile in DM!')});
+		.setDescription("**Fun**\nw!meme - Iti arata un meme random.\nw!roll - arunca un zar\nw!emojify - transforma un text in emoji\nw!gif - iti arata o imagine GIF random\nw!avatar <@user> - iti arata avatarul tau sau al unui user\n\n**Moderare**\nw!userinfo <@user> - iti arata informatiile unui user\n$serverinfo - iti arata informatiile server-ului\nw!kick [@user] - dai kick unui user\n\n**Self-Assign Roles**\nw!colors - iti arata culorile disponibile\nw!color <color> - iti alegi o culoare")
+		.setFooter("<OPTIONAL> & [NECESAR] | Pre-Alpha 0.0.2")
+		message.channel.send({embed})
 		return;
 	}
 	//SERVERINFO
