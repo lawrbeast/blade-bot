@@ -58,6 +58,35 @@ if(cmd === `${prefix}avatar`){
         return;
     }
    //
+if(cmd === `${prefix}color`){
+	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
+	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
+
+	let str = args.join(" ")
+	let role = colors.find(role => role.name.slice(1).toLowerCase() === str.toLowerCase());
+
+	try {
+		await message.member.removeRoles(colors);
+		await message.member.addRole(role)
+		message.channel.send(`Ai primit culoarea ${role}!`).then(msg => msg.delete(6500));
+		message.delete(6500);
+
+	} catch(e) {
+		message.channel.send(`Problema intampinata: ${e.message}`);
+	}
+}
+	if(cmd === `${prefix}colors`){
+	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
+	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
+	let colorsembed = new Discord.RichEmbed()
+	.setTitle("Culori disponibile:")
+	.setDescription(`${colors.array().join("✫")}\n\n**Pentru a primi o culoare dorita,\nFolositi ${prefix}color <culoare>.\n\nExemplu: $color red**`)
+	.setColor(`RANDOM`)
+	message.channel.send(colorsembed);
+	message.delete();
+	return;
+	}
+   //
   if(cmd === `${prefix}userinfo`){
 	let user;
 	// If the user mentions someone, display their stats. If they just run userinfo without mentions, it will show their own stats.
