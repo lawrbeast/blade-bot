@@ -78,11 +78,11 @@ if(cmd === `${prefix}color`){
 	if(cmd === `${prefix}colors`){
 	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
 	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
-	let colorsembed = new Discord.RichEmbed()
+	const embed = new Discord.RichEmbed()
 	.setTitle("Culori disponibile:")
 	.setDescription(`${colors.array().join("✫")}\n\n**Pentru a primi o culoare dorita,\nFolositi ${prefix}color <culoare>.\n\nExemplu: $color red**`)
 	.setColor(`RANDOM`)
-	message.channel.send(colorsembed);
+	message.channel.send({embed});
 	message.delete();
 	return;
 	}
@@ -117,7 +117,7 @@ if(cmd === `${prefix}color`){
     }
 	//HEP
 	if(cmd === `${prefix}help`){
-		let embed = new Discord.RichEmbed()
+		const embed = new Discord.RichEmbed()
 		.setColor("#fcfdff")
 		.setTitle("Legion's Commands")
 		.setDescription("**Fun**\nw!meme - Iti arata un meme random.\nw!roll - arunca un zar\nw!emojify - transforma un text in emoji\nw!gif - iti arata o imagine GIF random\nw!avatar <@user> - iti arata avatarul tau sau al unui user\n\n**Moderare**\nw!userinfo <@user> - iti arata informatiile unui user\n$serverinfo - iti arata informatiile server-ului\nw!kick [@user] - dai kick unui user\n\n**Self-Assign Roles**\nw!colors - iti arata culorile disponibile\nw!color <color> - iti alegi o culoare")
