@@ -1,2 +1,2 @@
 # blade-bot
-Best Bot Ever
+Bot developed for discord.js.
