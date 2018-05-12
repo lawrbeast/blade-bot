@@ -118,9 +118,9 @@ if(cmd === `${prefix}color`){
 	//HEP
 	if(cmd === `${prefix}help`){
 		const embed = new Discord.RichEmbed()
-		.setColor("#fcfdff")
-		.setTitle("Legion's Commands")
-		.setDescription("**Fun**:dancer:\nw!meme - Iti arata un meme random.\nw!roll - arunca un zar\nw!emojify - transforma un text in emoji\nw!gif - iti arata o imagine GIF random\nw!avatar <@user> - iti arata avatarul tau sau al unui user\n\n**Moderare**:tools:\nw!userinfo <@user> - iti arata informatiile unui user\n$serverinfo - iti arata informatiile server-ului\nw!kick [@user] - dai kick unui user\n\n**Self-Assign Roles**\nw!colors - iti arata culorile disponibile\nw!color <color> - iti alegi o culoare")
+		.setColor("#842727")
+		.setTitle("w!help")
+		.setDescription("**Fun**\nw!meme - Această comandă arată un meme random.\nw!roll - Această comandă aruncă un zar.\nw!emojify - Această comandă transformă un mesaj în emoji.\nw!gif - Această comandă arată un .GIF random.\nw!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nw!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nw!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\nw!colors - Această comandă îți arată lista culorilor disponibile pe server.");
 		.setFooter("<OPTIONAL> & [NECESAR] | Pre-Alpha 0.0.2")
 		message.channel.send({embed})
 		return;
