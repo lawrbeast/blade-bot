@@ -24,12 +24,8 @@ fs.readdir("./commands", (err, files) => {
 });
 //
 bot.on('guildMemberAdd', function(member) {
-    member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
-    member.guild.channels.get('443502387966115875').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
   });
 bot.on('guildMemberRemove', function(member){
-    member.guild.channels.get('443495906667528223').setName(`Membrii: ${member.guild.memberCount}`);
-    member.guild.channels.get('443502387966115875').setName(`Boti: ${member.guild.members.filter(m => m.user.bot).size}`);
 });
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
@@ -120,7 +116,7 @@ if(cmd === `${prefix}color`){
 		const embed = new Discord.RichEmbed()
 		.setColor("#842727")
 		.setTitle("w!help")
-		.setDescription("**Fun**\nw!meme - Această comandă arată un meme random.\nw!roll - Această comandă aruncă un zar.\nw!emojify - Această comandă transformă un mesaj în emoji.\nw!gif - Această comandă arată un .GIF random.\nw!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nw!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nw!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\nw!colors - Această comandă îți arată lista culorilor disponibile pe server.");
+		.setDescription("**Fun**\nw!meme - Această comandă arată un meme random.\nw!roll - Această comandă aruncă un zar.\nw!emojify - Această comandă transformă un mesaj în emoji.\nw!gif - Această comandă arată un .GIF random.\nw!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nw!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nw!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\nw!colors - Această comandă îți arată lista culorilor disponibile pe server.")
 		.setFooter("<OPTIONAL> & [NECESAR] | Pre-Alpha 0.0.2")
 		message.channel.send({embed})
 		return;
