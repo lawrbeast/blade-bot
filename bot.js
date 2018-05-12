@@ -116,7 +116,7 @@ if(cmd === `${prefix}color`){
 		const embed = new Discord.RichEmbed()
 		.setColor("#842727")
 		.setTitle("w!help")
-		.setDescription("**Fun**\nw!meme - Această comandă arată un meme random.\nw!roll - Această comandă aruncă un zar.\nw!emojify - Această comandă transformă un mesaj în emoji.\nw!gif - Această comandă arată un .GIF random.\nw!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nw!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nw!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\nw!colors - Această comandă îți arată lista culorilor disponibile pe server.")
+		.setDescription("**Fun**\nw!meme - Această comandă arată un meme random.\nw!roll - Această comandă aruncă un zar.\nw!emojify - Această comandă transformă un mesaj în emoji.\nw!gif - Această comandă arată un .GIF random.\nw!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nw!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nw!kick - Această comandă dă afară un membru de pe server.\nw!ban - Această comandă banează un membru de pe server.\nw!mute - Această comandă scoate accesul unui membru de a vorbi.\nw!warn - Această comandă avertizează un membru de pe server.\nw!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\nw!colors - Această comandă îți arată lista culorilor disponibile pe server.")
 		.setFooter("<OPTIONAL> & [NECESAR] | Pre-Alpha 0.0.2")
 		message.channel.send({embed})
 		return;
