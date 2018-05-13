@@ -58,7 +58,7 @@ if(cmd === `${prefix}avatar`){
     }
    //
 if(cmd === `${prefix}color`){
-	let colors = message.guild.roles.filter(role => role.name.startsWith("🔥"))
+	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
 	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
 
 	let str = args.join(" ")
@@ -75,7 +75,7 @@ if(cmd === `${prefix}color`){
 	}
 }
 	if(cmd === `${prefix}colors`){
-	let colors = message.guild.roles.filter(role => role.name.startsWith("🔥"))
+	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
 	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
 	const embed = new Discord.RichEmbed()
 	.setTitle("Culori disponibile:")
