@@ -156,7 +156,7 @@ if(cmd === `${prefix}roles`){
 	let rolesEmbed = new Discord.RichEmbed()
 	.setColor(`RANDOM`)
 	.setTitle(`Roles - ${message.guild.name}`)
-	.setDescription("message.guild.roles.map(roles => `${roles.name}`).join(', ')")
+	.setDescription(message.guild.roles.map(roles => `${roles.name}`).join(', '))
 	message.channel.send({embed:rolesEmbed});
 }
 	//
