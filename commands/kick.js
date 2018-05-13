@@ -1,29 +1,37 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-
-        if(!kUser) return message.channel.send("**Te rog sa introduci un user, exemplu: @user.**").then(msg => {msg.delete(5000)});
+        let kickuEmbed = new Discord.RichEmbed()
+        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+        .setColor("#bc2731")
+       .addField("Folosește", `w!kick @Membru Motiv`);
+        let cfu = new Discord.RichEmbed()
+        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+        .setColor("#bc2731")
+        .addField("Membru negăsit", "Nu găsesc acest membru!");
+        if(!kUser) return message.channel.send({embed:cfu}).then(msg => {msg.delete(5000)});
         let kReason = args.join(" ").slice(22);
-        if(!kReason) return message.channel.send("**Te rog sa introduci un motiv, exemplu: @user MOTIV.**").then(msg => {msg.delete(5000)});
-        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("圻 Permisiunile lipsesc, nu pot face asta!");
-        if(kUser.hasPermission("KICK_MEMBERS")) return message.channel.send("圻 Acel user este un admin/mod, nu pot face asta!");
+		if(!kReason) return message.channel.send({embed:kickuEmbed})
+        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":no_entry_sign: Nu aveți permisiunea pentru a face asta!");
+        if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu puteți să dați afară un moderator sau un administrator!");
 
-        let embed = new Discord.RichEmbed()
-        .setDescription(`Kick Info`)
-        .setColor("#f90000")
-        .addField("User", kUser, true)
+        let kickEmbed = new Discord.RichEmbed()
+        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+        .setDescription(`KICK INFO`)
+        .setColor("#bc2731")
+        .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
         .addField("Motiv", kReason, true)
-        .setFooter(`ID:${message.member.id}`)
-        .setTimestamp(new Date());
+       
+      
 
         let kickChannel = message.guild.channels.find(`name`, "mod-logs");
-        if(!kickChannel) return message.channel.send("Nu gasesc channel-ul `mod-logs`.");
+        if(!kickChannel) return message.channel.send("Nu găsesc channel-ul `mod-logs`.");
 
-        message.guild.member(kUser).kick(kReason);
-        kickChannel.send({embed})
-}
+        message.guild.member(kUser).kick(kReason)
+        kickChannel.send({embed:kickEmbed});
+    }
 
 module.exports.help = {
     name: "kick"
