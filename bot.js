@@ -24,12 +24,15 @@ fs.readdir("./commands", (err, files) => {
 });
 //
 bot.on('guildMemberAdd', function(member) {
-	member.guild.channels.find("name", "welcome").sendMessage("Bine ai venit pe acest grup, ${member}!**\n:black_small_square: Aparent ești o persoană nou venită pe **WOLVESZONE**, te rugăm să arunci o privire pe #📚·server-info !");
+	let user = member;
+	let welcome = new Discord.RichEmbed()
+	.setColor(`RANDOM`)
+	.setDescription(`**Bine ai venit pe acest grup, {user}**\n:black_small_square: Aparent ești o persoană nou venită pe WOLVESZONE!`)
+	.setThumbnail(member.displayAvatarURL);
+    member.guild.channels.find("name", "welcome").sendMessage({embed:welcome})
     let role = member.guild.roles.find("name", "Membru");
     member.addRole(role)
   });
-bot.on('guildMemberRemove', function(member){
-});
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
     bot.user.setPresence({ game: { name: `Prefix: w!help`, url: 'https://twitch.tv/qlau234', type: 1 } });
