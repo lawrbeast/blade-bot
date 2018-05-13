@@ -146,7 +146,7 @@ if(cmd === `${prefix}serverinfo`){
    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Online", online.size, true)
-   .addField(`Roles[${message.guild.roles.size}]`, `**To see a list with all roles use w!roles.**` true);
+   .addField(`Roles [${message.guild.roles.size}]`, `**To see a list with all roles use w!roles.**`, true);
    message.channel.send({embed});
 return;
 }
