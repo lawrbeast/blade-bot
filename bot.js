@@ -27,8 +27,8 @@ bot.on('guildMemberAdd', function(member) {
 	let user = member;
 	let welcome = new Discord.RichEmbed()
 	.setColor(`RANDOM`)
-	.setDescription(`**Bine ai venit pe acest grup, {user}**\n:black_small_square: Aparent ești o persoană nou venită pe WOLVESZONE!`)
-	.setThumbnail(member.displayAvatarURL);
+	.setDescription(`**Bine ai venit pe acest grup, ${user}**\n:black_small_square: Aparent ești o persoană nou venită pe WOLVESZONE!`)
+	.setFooter(`${member.displayAvatarURL} - ID: ${member.id}`);
     member.guild.channels.find("name", "welcome").sendMessage({embed:welcome})
     let role = member.guild.roles.find("name", "Membru");
     member.addRole(role)
