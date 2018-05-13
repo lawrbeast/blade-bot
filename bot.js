@@ -140,15 +140,15 @@ if(cmd === `${prefix}serverinfo`){
    .setColor("#7289DA")
    .setThumbnail(sicon)
    .addField("ID", message.guild.id, true)
-   .addField("Nume", message.guild.name, true)
+   .addField("Name", message.guild.name, true)
    .addField("Owner", message.guild.owner.user.tag, true)
-   .addField("Regiune", message.guild.region, true)
-   .addField("Canale", message.guild.channels.size, true)
-   .addField("Membrii", message.guild.memberCount, true)
-   .addField("Umani", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
-   .addField("Boti", message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Region", message.guild.region, true)
+   .addField("Channels", message.guild.channels.size, true)
+   .addField("Members", message.guild.memberCount, true)
+   .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
+   .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Online", online.size, true)
-   .addField("Roluri", message.guild.roles.size, true);
+   .addField(`Roles [${message.guild.roles.size}]`, `Pentru a vedea toate rolurile, foloseste w!roles!`)
    message.channel.send({embed});
 return;
 }
