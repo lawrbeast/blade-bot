@@ -136,19 +136,17 @@ if(cmd === `${prefix}serverinfo`){
    let sicon = message.guild.iconURL;
    let embed = new Discord.RichEmbed()
    .setAuthor(message.guild.name, sicon)
-   .setFooter(`Server Creat • ${day}.${month}.${year}`)
-   .setColor("#bc2731")
+   .setFooter(`Server Creat | ${day}.${month}.${year}`)
+   .setColor(".setColor("#bc2731")")
    .setThumbnail(sicon)
-   .addField("ID", message.guild.id, true)
-   .addField("Name", message.guild.name, true)
    .addField("Owner", message.guild.owner.user.tag, true)
-   .addField("Region", message.guild.region, true)
+   .addField("Regiune", message.guild.region, true)
    .addField("Channels", message.guild.channels.size, true)
    .addField("Members", message.guild.memberCount, true)
    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Online", online.size, true)
-   .addField(`Roles [${message.guild.roles.size}]`, `Pentru a vedea lista cu toate rolurile disponibile, foloseste w!roles!`)
+   .addField(`Roles[${message.guild.roles.size}]`, `**To see a list with all roles use w!roles.**` true);
    message.channel.send({embed});
 return;
 }
