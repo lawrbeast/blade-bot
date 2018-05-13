@@ -137,7 +137,7 @@ if(cmd === `${prefix}serverinfo`){
    let embed = new Discord.RichEmbed()
    .setAuthor(message.guild.name, sicon)
    .setFooter(`Server Creat • ${day}.${month}.${year}`)
-   .setColor("#7289DA")
+   .setColor("#bc2731")
    .setThumbnail(sicon)
    .addField("ID", message.guild.id, true)
    .addField("Name", message.guild.name, true)
