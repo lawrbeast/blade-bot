@@ -24,6 +24,9 @@ fs.readdir("./commands", (err, files) => {
 });
 //
 bot.on('guildMemberAdd', function(member) {
+	member.guild.channels.find("name", "welcome").sendMessage("Bine ai venit pe acest grup, ${member}!**\n:black_small_square: Aparent ești o persoană nou venită pe **WOLVESZONE**, te rugăm să arunci o privire pe #faq-server !\n:black_small_square: Aparent ești o persoană nou venită pe **WOLVESZONE**, te rugăm să arunci o privire pe #📚·server-info !");
+    let role = member.guild.roles.find("name", "Membru");
+    member.addRole(role)
   });
 bot.on('guildMemberRemove', function(member){
 });
