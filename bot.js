@@ -82,8 +82,8 @@ if(cmd === `${prefix}color`){
 	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
 	const embed = new Discord.RichEmbed()
 	.setTitle("Culori disponibile:")
-	.setDescription(`${colors.array()}\n\n**Pentru a primi o culoare dorita,\nFolositi ${prefix}color <culoare>.\n\nExemplu: $color red**`)
-	.setColor(`RANDOM`)
+	.setDescription(`${colors.array()}\n\n**Pentru a primi o culoare dorita,\nFolositi ${prefix}color <culoare>.\n\nExemplu: w!color red**`)
+	.setColor(`#bc2731`)
 	message.channel.send({embed});
 	message.delete();
 	return;
@@ -154,9 +154,10 @@ return;
 }
 if(cmd === `${prefix}roles`){
 	let rolesEmbed = new Discord.RichEmbed()
-	.setColor(`RANDOM`)
+	.setColor(`#bc2731`)
 	.setTitle(`Roles - ${message.guild.name}`)
 	.setDescription(message.guild.roles.map(roles => `${roles.name}`).join(', '))
+	.setFooter(`Lista completa cu rolurile serverului ${message.guild.name}!`)
 	message.channel.send({embed:rolesEmbed});
 }
 	//
