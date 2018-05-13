@@ -62,7 +62,7 @@ if(cmd === `${prefix}avatar`){
    //
 if(cmd === `${prefix}color`){
 	let colors = message.guild.roles.filter(role => role.name.startsWith("●"))
-	if(colors.size < 1) return message.channel.send("Pe acest server nu exista nici o culoare.");
+	if(colors.size < 1) return message.channel.send("Pe acest server nu existﾄ・nici o culoare.");
 
 	let str = args.join(" ")
 	let role = colors.find(role => role.name.slice(1).toLowerCase() === str.toLowerCase());
@@ -70,7 +70,7 @@ if(cmd === `${prefix}color`){
 	try {
 		message.member.removeRoles(colors);
 		message.member.addRole(role)
-		message.channel.send(`Ai primit culoarea ${role}!`).then(msg => msg.delete(6500));
+		message.channel.send(`Ai primit culoarea ${role.name}!`).then(msg => msg.delete(6500));
 		message.delete(6500);
 
 	} catch(e) {
