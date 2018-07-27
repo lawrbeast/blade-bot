@@ -35,12 +35,12 @@ bot.on('guildMemberAdd', function(member) {
   });
 bot.on("ready", async () => {
     console.log(`WolvesZone este online`);
-    bot.user.setPresence({ game: { name: `Prefix: w!help`, url: 'https://twitch.tv/qlau234', type: 1 } });
+    bot.user.setPresence({ game: { name: `Prefix: d!help\nLaurentiu seful meu`, url: 'https://twitch.tv/qlau234', type: 1 } });
 });
 bot.on("message", message => {
   if(message.channel.type === "dm") return
 
-    const prefix = "w!";
+    const prefix = "d!";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let sender = message.author;
