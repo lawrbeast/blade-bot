@@ -120,7 +120,7 @@ if(cmd === `${prefix}color`){
 	//HEP
 	if(cmd === `${prefix}help`){
 		const embed = new Discord.RichEmbed()
-		.setColor("#842727")
+		.setColor("#00fff2")
 		.setTitle("Ti-am dat mai jos toate comenzile!")
 		.setDescription("**Fun**\nd!meme - Această comandă arată un meme random.\nd!roll - Această comandă aruncă un zar.\nd!emojify - Această comandă transformă un mesaj în emoji.\nd!gif - Această comandă arată un .GIF random.\nd!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nd!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nd!kick - Această comandă dă afară un membru de pe server.\nd!ban - Această comandă banează un membru de pe server.\nd!mute - Această comandă scoate accesul unui membru de a vorbi.\nd!warn - Această comandă avertizează un membru de pe server.\nd!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\n**IN CURAND**")
 		.setFooter("Laurentiu seful meu.")
