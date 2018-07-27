@@ -5,13 +5,13 @@ module.exports.run = async (bot, message, args) => {
 
         let warnuEmbed = new Discord.RichEmbed()
         .setTitle ("~**Comanda Warn**~")
-        .setColor("#f90000")
+        .setColor("#0a9678")
         .addField("Te rog sa folosesti 竊ｴ", "!warn @User Motiv")
         .setFooter("~Comanda Warn~");
 
         let cfu = new Discord.RichEmbed()
         .setTitle ("Eroare!")
-        .setColor("#f90000")
+        .setColor("#0a9678")
         .addField("User negasit", "Nu gasesc acel user!");
         if(!wUser) return message.channel.send(cfu).then(msg => {msg.delete(5000)});
         let wReason = args.join(" ").slice(22);
