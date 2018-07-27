@@ -102,7 +102,7 @@ if(cmd === `${prefix}color`){
 
 	//Discord rich embed
     const embed = new Discord.RichEmbed()
-		.setColor('RANDOM')
+		.setColor('#0a9678')
 		.setThumbnail(user.avatarURL)
 		.setTitle(`${user.username}#${user.discriminator}`)
 		.addField("ID:", `${user.id}`, true)
@@ -137,7 +137,7 @@ if(cmd === `${prefix}serverinfo`){
    let embed = new Discord.RichEmbed()
    .setAuthor(message.guild.name, sicon)
    .setFooter(`Server Creat | ${day}.${month}.${year}`)
-   .setColor("#bc2731")
+   .setColor("#0a9678")
    .setThumbnail(sicon)
    .addField("Owner", message.guild.owner.user.tag, true)
    .addField("Regiune", message.guild.region, true)
@@ -152,7 +152,7 @@ return;
 }
 if(cmd === `${prefix}roles`){
 	let rolesEmbed = new Discord.RichEmbed()
-	.setColor(`#bc2731`)
+	.setColor(`#0a9678`)
 	.setTitle(`Roles [${message.guild.roles.size}]`)
 	.setDescription(message.guild.roles.map(roles => `${roles.name}`).join(', '))
 	.setFooter(`Lista completa cu rolurile serverului ${message.guild.name}!`)
