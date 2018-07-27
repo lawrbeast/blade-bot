@@ -134,19 +134,22 @@ if(cmd === `${prefix}serverinfo`){
    let month = 1 + message.guild.createdAt.getMonth()
    let year = message.guild.createdAt.getFullYear()
    let sicon = message.guild.iconURL;
+   let guild = message.guild
    let embed = new Discord.RichEmbed()
    .setAuthor(message.guild.name, sicon)
-   .setFooter(`Server Creat | ${day}.${month}.${year}`)
+   .setFooter(`Creat pe • ${day}.${month}.${year}`)
    .setColor("#0a9678")
    .setThumbnail(sicon)
+   .addField("ID", message.guild.id, true)
+   .addField("Name", message.guild.name, true)
    .addField("Owner", message.guild.owner.user.tag, true)
    .addField("Regiune", message.guild.region, true)
-   .addField("Channels", message.guild.channels.size, true)
+   .addField("Canale", message.guild.channels.size, true)
    .addField("Members", message.guild.memberCount, true)
    .addField("Humans", message.guild.memberCount - message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Bots", message.guild.members.filter(m => m.user.bot).size, true)
    .addField("Online", online.size, true)
-   .addField(`Roles [${message.guild.roles.size}]`, `**To see a list with all roles use w!roles.**`, true);
+   .addField(Roles [${message.guild.roles.size}]", guild.roles.map(roles => `${roles.name}`).join(', '), true)
    message.channel.send({embed});
 return;
 }
