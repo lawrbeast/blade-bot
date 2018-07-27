@@ -153,7 +153,7 @@ return;
 if(cmd === `${prefix}roles`){
 	let rolesEmbed = new Discord.RichEmbed()
 	.setColor(`#bc2731`)
-	.setTitle(`Roles - ${message.guild.name}`)
+	.setTitle(`Roles [${message.guild.roles.size}]`)
 	.setDescription(message.guild.roles.map(roles => `${roles.name}`).join(', '))
 	.setFooter(`Lista completa cu rolurile serverului ${message.guild.name}!`)
 	message.channel.send({embed:rolesEmbed});
