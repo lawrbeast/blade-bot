@@ -15,7 +15,7 @@ exports.run = (client, message, args, tools) => {
                 SEND_MESSAGES: null
             })
             .then(() => {
-                message.channel.send('Lockdown lifted.');
+                message.channel.send('Chat deblocat.');
                 clearTimeout(client.lockit[message.channel.id]);
                 delete client.lockit[message.channel.id];
             })
@@ -27,14 +27,14 @@ exports.run = (client, message, args, tools) => {
                 SEND_MESSAGES: false
             })
             .then(() => {
-                message.channel.send(`Channel locked down for ${ms(ms(time), { long:true })}`)
+                message.channel.send(`Chat blocat pentru ${ms(ms(time), { long:true })}`)
                     .then(() => {
 
                         client.lockit[message.channel.id] = setTimeout(() => {
                             message.channel.overwritePermissions(message.guild.id, {
                                     SEND_MESSAGES: null
                                 })
-                                .then(message.channel.send('Lockdown lifted.'))
+                                .then(message.channel.send('Chat deblocat.'))
                                 .catch(console.error);
                             delete client.lockit[message.channel.id];
                         }, ms(time));
