@@ -2,15 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        let kickuEmbed = new Discord.RichEmbed()
-        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
-        .setColor("#bc2731")
-       .addField("Folosește", `w!kick @Membru Motiv`);
-        let cfu = new Discord.RichEmbed()
-        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
-        .setColor("#bc2731")
-        .addField("Membru negăsit", "Nu găsesc acest membru!");
-        if(!kUser) return message.channel.send({embed:cfu}).then(msg => {msg.delete(5000)});
+        if(!kUser) return message.channel.send("Nu ai mentionat un membru.").then(msg => {msg.delete(5000)});
         let kReason = args.join(" ").slice(22);
 		if(!kReason) return message.channel.send({embed:kickuEmbed})
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":no_entry_sign: Nu aveți permisiunea pentru a face asta!");
@@ -18,7 +10,7 @@ module.exports.run =  (bot, message, args) => {
 
         let kickEmbed = new Discord.RichEmbed()
         .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
-        .setDescription(`KICK INFO`)
+        .setDescription(`Kick - Case | ${kUser}`)
         .setColor("#bc2731")
         .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
