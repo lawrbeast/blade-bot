@@ -10,7 +10,7 @@ module.exports.run = (bot, message, args) => {
 }
  if(args[0] === "castigator") {
   let castigator = message.guild.member(message.guild.members.get(args[1]));
-   message.channel.send(`**Daily Battle** terminat!\nCastigator: ${castigator}!`);
+   message.channel.send(`**Daily Battle** terminat!\nCastigator: ${castigator} !`);
  }
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.delete();
 }
