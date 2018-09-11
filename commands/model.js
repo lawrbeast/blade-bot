@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = (bot, message, args) => {
 let args1 = args.join(" ").slice(1)
-if args = "daily"{
+if args1 = "daily"{
   let dailyembed = new Discord.RichEmbed()
   .setTitle("Model Daily Battle")
   .setDescription("test");
