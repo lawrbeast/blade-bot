@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args) => {
   .setTitle("Daily Battle")
   .setColor('#f71d54')
   .setDescription(":black_small_square: Temă:\n:black_small_square: Stock:\n:black_small_square: Tipul lucrării:\n:black_small_square: Dimensiuni:\n:black_small_square: Text:");
-  if(!author.id === '257491128671141888') return message.delete();
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.delete();
   message.channel.send({embed:dailyembed});
 }
 module.exports.help = {
