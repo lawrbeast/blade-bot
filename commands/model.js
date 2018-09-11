@@ -5,10 +5,7 @@ module.exports.run = (bot, message, args) => {
   .setTitle("Model Daily Battle")
   .setDescription("test");
 let args1 = args.join(" ").slice(1);
-  if(args1) === "daily" {
-    message.channel.send({embed:dailyembed});
-  }
-  
+  if(args1) return message.channel.send({embed:dailyembed}); 
 }
 module.exports.help = {
     name: "model"
