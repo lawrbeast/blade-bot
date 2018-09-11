@@ -8,7 +8,7 @@ module.exports.run = (bot, message, args) => {
   if(args[0] === "daily") {
  message.channel.send({embed:dailyembed})
 }
- if[args[0] === "battle") {
+ if(args[0] === "battle") {
    message.channel.send("test");
  }
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.delete();
