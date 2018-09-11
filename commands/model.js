@@ -8,11 +8,12 @@ module.exports.run = (bot, message, args) => {
   if(args[0] === "daily") {
  message.channel.send({embed:dailyembed})
 }
- if(args[0] === "battle") {
-   message.channel.send("test");
+ if(args[0] === "castigator") {
+  let castigator = message.guild.member(message.guild.members.get(args[1]));
+   message.channel.send(`**Daily Battle** terminat!\nCastigator: ${castigator}!`);
  }
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.delete();
 }
 module.exports.help = {
-    name: "daily"
+    name: "model"
 }
