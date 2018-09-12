@@ -1,0 +1,28 @@
+const Discord = require("discord.js");
+
+module.exports.run = (client, message, args) => {
+
+
+
+    let google = args.slice(0).join('+');
+
+        let link = `https://www.google.com/search?q=` + google;
+        if(!link)return message.reply("Console error")
+        let embed = new Discord.RichEmbed()
+	
+    .setColor("RED")
+    .setTimestamp()
+	.addField("Cuvant:", `${args.slice(0).join(' ')}`)
+	.addField('Link:', `${link}`)
+	.setFooter("Doogle", message.author.avatarURL);
+          
+	message.channel.send(embed);
+	message.author.send(`You have searched for ${link} in ${ message.guild.name}`);
+  
+}
+
+
+
+module.exports.help = {
+    name: "google"
+}
