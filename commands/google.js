@@ -10,7 +10,7 @@ module.exports.run = (client, message, args) => {
 	//
         .setColor("RED")
         .setTimestamp()
-	.addField("Cuvant:", `${args.slice(0).join(' ')}`)
+	.addField("Cerut de:", `${message.author}`)
 	.addField('Link:', `${link}`)
 	.setFooter("Doogle", message.author.avatarURL);
 	//
