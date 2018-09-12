@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args) => {
         return message.channel.send('Nu ai permisiunea necesară pentru a vizualiza invitațiile!');
     });
 
-    let invites = invites.array();
+    invites = invites.array();
 
     let possibleinvites = [];
     invites.forEach(function(invites) {
