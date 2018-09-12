@@ -16,7 +16,6 @@ module.exports.run = async (bot, message, args) => {
         .setTitle(`**INVITE LEADERBOARD**`)
         .setColor(0xCB5A5E)
         .setDescription(`\`\`\`${possibleinvites.join('\n')}\`\`\``)
-        .setTimestamp();
     message.channel.send({embed:embed});
 }
 
