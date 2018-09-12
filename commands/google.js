@@ -10,12 +10,11 @@ module.exports.run = (client, message, args) => {
 	//
         .setColor("RED")
         .setTimestamp()
-	.addField("Cerut de:", `${message.author}`)
+	.addField("Caut", `${args.slice(0).join(' ')}`)
 	.addField('Link:', `${link}`)
 	.setFooter("Doogle", message.author.avatarURL);
 	//
 	message.channel.send({embed:embed});
-  
 }
 module.exports.help = {
     name: "google"
