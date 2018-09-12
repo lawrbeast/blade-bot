@@ -11,9 +11,9 @@ module.exports.run = async (bot, message, args) => {
         .addField("Lista Servere", string)
         .setTimestamp()
         .setFooter("Cerut de: " + message.author.username, message.author.avatarURL);
-    message.channel.send(botembed);
+    message.channel.send({embed:botembed});
 }
 
 module.exports.help = {
-    name: "servers"
+    name: "serverlist"
 }
