@@ -5,11 +5,11 @@ module.exports.run = (bot, message, args) => {
         return message.channel.send('Nu ai permisiunea necesară pentru a vizualiza invitațiile!');
     });
 
-    invites = invites.array();
+    let invites = invites.array();
 
     let possibleinvites = [];
     invites.forEach(function(invites) {
-        possibleinvites.push(`[test]           [>] ${invites.inviter.username}: ${invites.uses}\n`)
+        possibleinvites.push(`[>] ${invites.inviter.username}: ${invites.uses}\n`)
     })
 
     const embed = new Discord.RichEmbed()
