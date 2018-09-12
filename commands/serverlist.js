@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     let bicon = bot.user.displayAvatarURL;
     let string = '';
     bot.guilds.forEach(guild => {
-    string += "\`\`\`css>>\`\`\` " + guild.name + '\n';})
+    string += "● " + guild.name + '\n';})
     let bt = bot.user.username;
     let botembed = new Discord.RichEmbed()
         .setColor("#f71d54")
