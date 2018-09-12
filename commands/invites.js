@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
     let possibleinvites = [];
     invites.forEach(function(invites) {
-        possibleinvites.push(`[>] ${invites.inviter.username}: `\`\`fix${invites.uses}`\`\``)
+        possibleinvites.push(`[>] ${invites.inviter.username}: \`\`\`fix${invites.uses}`\`\``)
     })
 
     const embed = new Discord.RichEmbed()
