@@ -9,13 +9,13 @@ module.exports.run = async (bot, message, args) => {
 
     let possibleinvites = [];
     invites.forEach(function(invites) {
-        possibleinvites.push(`[>] ${invites.inviter.username}: ${invites.uses}`)
+        possibleinvites.push(`[>] ${invites.inviter.username}: ${invites.uses}\n`)
     })
 
     const embed = new Discord.RichEmbed()
         .setTitle(`**INVITE LEADERBOARD**`)
         .setColor(0xCB5A5E)
-        .setDescription(`\`\`\`${possibleinvites.join('\n\n')}\`\`\``)
+        .setDescription(`\`\`\`${possibleinvites.join('\n')}\`\`\``)
     message.channel.send({embed:embed});
 }
 
