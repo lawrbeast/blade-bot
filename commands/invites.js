@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = (bot, message, args) => {
     let invites = await message.guild.fetchInvites().catch(error => {
         return message.channel.send('Nu ai permisiunea necesară pentru a vizualiza invitațiile!');
     });
@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
 
     let possibleinvites = [];
     invites.forEach(function(invites) {
-        possibleinvites.push(`[>] ${invites.inviter.username}: ${invites.uses}\n`)
+        possibleinvites.push(`[test]           [>] ${invites.inviter.username}: ${invites.uses}\n`)
     })
 
     const embed = new Discord.RichEmbed()
