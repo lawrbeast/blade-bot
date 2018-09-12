@@ -10,7 +10,7 @@ try {
     }
     const bug = args.join(" ")
     if (!bug) return message.channel.send('Te rog să introduci o sugestie!')
-    const content = clean(`**${message.author.username}**#${message.author.discriminator} (${message.author.id}) a propus o sugestie:\n**Sugestie:**${bug}\nServer: **${message.guild.name}**\nID: **${message.guild.id}**`);
+    const content = clean(`**${message.author.username}**#${message.author.discriminator} (${message.author.id}) a propus o sugestie:\n**Sugestie: **${bug}\nServer: **${message.guild.name}**\nID: **${message.guild.id}**`);
     const id = '489483749604458497';
     new Promise((resolve, reject) => {
       superagent.post(`https://discordapp.com/api/channels/${id}/messages`)
