@@ -15,7 +15,6 @@ module.exports.run = async (bot, message, args) => {
         .addField("User negasit", "Nu gasesc acel user!");
         if(!wUser) return message.channel.send(cfu).then(msg => {msg.delete(5000)});
         let wReason = args.join(" ").slice(22)
-        if(!wReason) return message.send("Fara motiv")
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu ai permisiunile necesare.");
         if(wUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu poti face asta unui administrator.");
 
