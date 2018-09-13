@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = (bot, message, args) => {
 
 var today = new Date()
-let Day = today.toString().split(" ")[0].concat("day");
+let Day = today.toString().split(" ")[0]
 let Month = today.toString().split(" ")[1]
 let Year = today.toString().split(" ")[3]
 if(Day === "Thu"){
