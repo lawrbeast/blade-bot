@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
-module.exports.run = (bot, message, args) => {
-    let invites = message.guild.fetchInvites().catch(error => {
-        return message.channel.send('Nu ai permisiunea necesară pentru a vizualiza invitațiile!');
+module.exports.run = async (bot, message, args) => {
+    let invites = await message.guild.fetchInvites().catch(error => {
+        return message.channel.send('Sorry, I don\'t have the proper permissions to view invites!');
     });
 
     invites = invites.array();
