@@ -10,6 +10,7 @@
       "discord.js": "11.1.0",
       "fs": "0.0.1-security",
       "moment": "2.22.1",
+      "unique-random": "2.0.0",
       "memejs": "1.0.7",
       "gif-search": "^2.0.1",
       "ms": "^2.1.1",
