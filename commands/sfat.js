@@ -5,9 +5,6 @@ exports.run = (message, bot, send) => {
         try {
             let cnj = JSON.parse(body)
             message.channel.send(cnj.slip.advice)
-        } catch (e) {
-            return message.channel.send("**Masinaria de sfaturi s-a stricat! :sad:**")
-        }
     });
 }
 exports.help = {
