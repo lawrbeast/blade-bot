@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
 
     await message.channel.send("Arunc zarul...:game_die: :game_die: ").then(msg => {msg.delete(2500)});
-    await message.channel.send(`:game_die: Zarul a cazut pe fata cu numarul: ${rand()}`));
+    await message.channel.send(`:game_die: Zarul a cazut pe fata cu numarul: ${rand()}`);
 
 
 
