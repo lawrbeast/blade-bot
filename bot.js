@@ -195,4 +195,4 @@ if (msg.includes(`DISCORD.GG`)){
 	}
   });
   
-bot.login(process.env.BOT_TOKEN).listen(process.env.PORT || 5000);
+bot.login(process.env.BOT_TOKEN)
