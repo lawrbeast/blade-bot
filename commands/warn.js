@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
         if(wUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu poti face asta unui administrator.");
 
         message.channel.send(`**${wUser} a fost avertizat!**`);
-        wUser.send(`Ai primit warn pe **${message.guild.name}** de la **${message.author.tag}** cu motivul **${wReason}**`)
+        wUser.send(`Ai primit warn pe **${message.guild.name}** de la **${message.author.tag}** cu motivul ${wReason}`)
 }
 
 module.exports.help = {
