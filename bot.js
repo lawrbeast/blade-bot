@@ -36,18 +36,12 @@ bot.on("message", message => {
 	
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
+    let sender = message.author;
     let command;
 
-    if (cmd.length == 0) return;
-    if (bot.commands.has(cmd)) {
-        command = bot.commands.get(cmd);
-    }
-
-    try {
-        command.run(bot, message, args);
-    } catch (e) {
-        message.channel.send(`I'm sorry, but \`${cmd}\` couldn't be found.`).then(m => m.delete(4000));
-    }
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot, message, args);
+    if(!message.content.startsWith(`${prefix}`)) return
 	//COMMANDS
 if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
