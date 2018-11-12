@@ -11,9 +11,9 @@ exports.run = (bot, message, args) => {
     .setColor("#cc0000")
     .setTitle(`Membru Debanat`)
     .setDescription(`${user} a fost debanat!`)
-    .setThumbnail(user.avatarURL)
+    .setThumbnail(user.displayAvatarURL)
     .setTimestamp()
-    .setFooter(user.id);
+    .setFooter(`${user}`);
     modlog.send({embed:unbanEmbed})
     message.reply(`${user} a fost debanat!`)
 };
