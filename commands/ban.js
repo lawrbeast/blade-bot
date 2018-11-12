@@ -17,10 +17,10 @@ module.exports.run = (bot, message, args) => {
   .setFooter(`ID:${bUser.id}`)
   .setTimestamp(new Date());
 
-  let banchannel = message.guild.channels.find(`name`, "mod-logs");
+  let banchannel = message.guild.channels.find(`name`, "logs");
 
   message.guild.member(bUser).ban(bReason);
-  banchannel.send(banEmbed);
+  banchannel.send({embed:banEmbed});
 }
 
 module.exports.help = {
