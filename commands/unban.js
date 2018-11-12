@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 exports.run = (bot, message, args) => {
     bot.unbanAuth = message.author;
     const user = args[0]
+    let sicon = message.member.iconURL;
     if(!message.author.hasPermission("BAN_MEMBERS")) return message.channel.send("圻 Permisiunile lispesc, nu pot face asta!");
     const modlog = bot.channels.find('name', 'logs');
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
@@ -12,7 +13,7 @@ exports.run = (bot, message, args) => {
     .setColor("#cc0000")
     .setTitle(`Membru Debanat`)
     .setDescription(`<@${user}> a fost debanat!`)
-    .setThumbnail(user.displayAvatarURL)
+    .setAuthor(message.guild.name, sicon)
     .setTimestamp()
     .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
     modlog.send({embed:unbanEmbed})
