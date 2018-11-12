@@ -39,12 +39,9 @@ bot.on("message", message => {
     let sender = message.author;
     let command;
 
-   if (message.content.startsWith(prefix)) {
-    let commandfile = bot.commands.get(command.slice(prefix.length));
-    if (commandfile) commandfile.run(bot, message, args);
-  } else {
-//prolly coins system crap here
-}
+    let commandfile = bot.commands.get(cmd.slice(prefix.length).trim().split(/ +/g);
+    if(commandfile) commandfile.run(bot, message, args);
+    if(!message.content.startsWith(`${prefix}`)) return
 	//COMMANDS
 if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
