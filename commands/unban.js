@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 exports.run = (bot, message, args) => {
     bot.unbanAuth = message.author;
     const user = args[0]
+    if(unban === `Unknown Ban`) return;
     const modlog = bot.channels.find('name', 'logs');
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
     if (!user) return message.reply('Exemplu: d!unban ID & USER#1234.').catch(console.error);
