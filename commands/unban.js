@@ -6,9 +6,8 @@ exports.run = (bot, message, args) => {
     const modlog = bot.channels.find('name', 'logs');
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
     if (!user) return message.reply('Exemplu: d!unban ID & USER#1234.').catch(console.error);
-    message.guild.unban(user){
-        else return;
-    }
+    message.guild.unban(user)
+    if(error) return;
     let unbanEmbed = new Discord.RichEmbed()
     .setColor("#cc0000")
     .setTitle(`Membru Debanat`)
