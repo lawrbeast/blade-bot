@@ -2,16 +2,16 @@ const Discord = require("discord.js")
 
 exports.run = (bot, message, args) => {
     bot.unbanAuth = message.author;
-    const user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    const user = args[0]
     const modlog = bot.channels.find('name', 'logs');
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
     if (!user) return message.reply('Exemplu: d!unban ID & USER#1234.').catch(console.error);
     message.guild.unban(user);
     let unbanEmbed = new Discord.RichEmbed()
     .setColor("#cc0000")
-    .setTitle(`${user.displayAvatarURL} Memberu Debanat`)
-    .setDescription(`${user.username}#${user.discriminator}`)
-    .setThumbnail(user.avatarURL)
+    .setTitle(`${member.displayAvatarURL} Memberu Debanat`)
+    .setDescription(`${member.username}#${member.discriminator}`)
+    .setThumbnail(member.avatarURL)
     .setFooter(user.id)
     modlog.send({embed:unbanEmbed})
     message.reply(`${user.id} a fost debanat!`)
