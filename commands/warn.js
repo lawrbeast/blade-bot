@@ -13,8 +13,11 @@ module.exports.run = async (bot, message, args) => {
         .setTitle ("Eroare!")
         .setColor("#0a9678")
         .addField("User negasit", "Nu gasesc acel user!");
-        if(!wUser) return message.channel.send(cfu).then(msg => {msg.delete(5000)});
+        if(!wUser) return message.channel.send({embed:cfu}).then(msg => {msg.delete(5000)});
         let wReason = args.join(" ").slice(22)
+        if(!wReason){
+                let wReason = "fara motiv"
+        }
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu ai permisiunile necesare.");
         if(wUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu poti face asta unui administrator.");
 
