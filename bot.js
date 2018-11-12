@@ -39,7 +39,7 @@ bot.on("message", message => {
     let sender = message.author;
     let command;
 
-    let commandfile = bot.commands.get(cmd.slice(prefix.length).trim().split(/ +/g);
+    let commandfile = bot.commands.get(cmd.slice(prefix.length).trim().split(/ +/g));
     if(commandfile) commandfile.run(bot, message, args);
     if(!message.content.startsWith(`${prefix}`)) return
 	//COMMANDS
