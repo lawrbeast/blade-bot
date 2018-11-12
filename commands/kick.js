@@ -13,9 +13,8 @@ module.exports.run =  (bot, message, args) => {
         .setColor("#bc2731")
         .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
-        .addField("Motiv", kReason, true)
+        .addField("Motiv", kReason, true);
        
-      
 
         let kickChannel = message.guild.channels.find(`name`, "logs");
         if(!kickChannel) return message.channel.send("Nu găsesc channel-ul `logs`.");
