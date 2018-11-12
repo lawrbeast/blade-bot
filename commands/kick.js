@@ -4,6 +4,9 @@ module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!kUser) return message.channel.send("Nu ai mentionat un membru.").then(msg => {msg.delete(5000)});
         let kReason = args.join(" ").slice(22);
+        if(!kReason){
+                let kReason = "none"       
+        }
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":no_entry_sign: Nu aveți permisiunea pentru a face asta!");
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu puteți să dați afară un moderator sau un administrator!");
 
