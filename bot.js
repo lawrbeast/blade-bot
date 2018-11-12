@@ -34,9 +34,9 @@ bot.on("message", message => {
 
     const prefix = "oblivon ";
     let messageArray = message.content.split(" ");
-    let cmd = messageArray[2];
+    let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let cmd = args.shift().toLowerCase();
     let sender = message.author;
-    let args = messageArray.slice(1);
 	
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
