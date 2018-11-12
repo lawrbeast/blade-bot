@@ -14,7 +14,7 @@ exports.run = (bot, message, args) => {
     .setDescription(`<@${user}> a fost debanat!`)
     .setThumbnail(user.displayAvatarURL)
     .setTimestamp()
-    .setFooter(`${user}`);
+    .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
     modlog.send({embed:unbanEmbed})
     message.reply(`<@${user}> a fost debanat!`)
 };
