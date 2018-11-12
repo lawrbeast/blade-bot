@@ -34,14 +34,14 @@ bot.on("message", message => {
 
     const prefix = "oblivon ";
     let messageArray = message.content.split(" ");
-    let cmd = messageArray[1];
+    let cmd = messageArray[0];
     let sender = message.author;
     let args = messageArray.slice(1);
 	
     if(!message.content.startsWith(prefix)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot, message, args);
-    if(!message.content.startsWith(`${prefix}`)) return
+    if(!message.content.startsWith(`${prefix} `)) return
 	//COMMANDS
 if(cmd === `${prefix}avatar`){
     let user = message.mentions.users.first() || message.author;
