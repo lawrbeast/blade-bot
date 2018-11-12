@@ -32,7 +32,7 @@ bot.on("ready", async () => {
 bot.on("message", message => {
   if(message.channel.type === "dm") return
 
-    const prefix = `oblivon`;
+    const prefix = "oblivon ";
     let messageArray = message.content.split(" ");
     let cmd = messageArray[1];
     let sender = message.author;
