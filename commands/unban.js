@@ -10,11 +10,11 @@ exports.run = (bot, message, args) => {
     let unbanEmbed = new Discord.RichEmbed()
     .setColor("#cc0000")
     .setTitle(`${user.displayAvatarURL} Memberu Debanat`)
-    .setDescription(`${user}`)
-    .setThumbnail(user.displayAvatarURL)
-    .setFooter(`user.id`)
+    .setDescription(`${user.username}#${user.discriminator}`)
+    .setThumbnail(user.avatarURL)
+    .setFooter(user.id)
     modlog.send({embed:unbanEmbed})
-    message.reply(`{user.id} a fost debanat!`)
+    message.reply(`${user.id} a fost debanat!`)
 };
 
 exports.help = {
