@@ -7,7 +7,13 @@ exports.run = (bot, message, args) => {
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
     if (!user) return message.reply('Exemplu: d!unban ID & USER#1234.').catch(console.error);
     message.guild.unban(user);
-    message.reply(`<@${user}> a fost debanat!`)
+    let unbanEmbed = new Discord.RichEmbed()
+    .setColor("#cc0000")
+    .setTitle(`${user.avatarURL} Memberu Debanat`)
+    .setDescription(`${user} ${user.username}`)
+    .setFooter(`${user.id}`)
+    modlog.send({embed:unbanEmbed})
+    message.reply(`<@${user.username}> a fost debanat!`)
 };
 
 exports.help = {
