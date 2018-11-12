@@ -34,7 +34,7 @@ bot.on("message", message => {
 
     const prefix = "oblivon ";
     let messageArray = message.content.split(" ");
-    let cmd = messageArray[0];
+    let cmd = messageArray[2];
     let sender = message.author;
     let args = messageArray.slice(1);
 	
