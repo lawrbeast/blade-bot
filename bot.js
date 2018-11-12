@@ -38,7 +38,6 @@ bot.on("message", message => {
     let cmd = args.shift().toLowerCase();
     let sender = message.author;
 	
-    if(!message.content.startsWith(`${prefix}`)) return;
     let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot, message, args);
     if(!message.content.startsWith(`${prefix}`)) return
