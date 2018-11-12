@@ -3,7 +3,7 @@ const Discord = require("discord.js")
 exports.run = (bot, message, args) => {
     bot.unbanAuth = message.author;
     const user = args[0]
-    let sicon = message.user.iconURL;
+    let sicon = message.guild.iconURL;
     const modlog = bot.channels.find('name', 'logs');
     if (!modlog) return message.reply('Nu gasesc channelul **logs**!');
     if (!user) return message.reply('Exemplu: d!unban ID & USER#1234.').catch(console.error);
@@ -14,7 +14,7 @@ exports.run = (bot, message, args) => {
     .setDescription(`<@${user}> a fost debanat!`)
     .setAuthor(message.guild.name, sicon)
     .setTimestamp()
-    .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+    .setFooter(`${user}`, `${message.guild.iconURL}`)
     modlog.send({embed:unbanEmbed})
     message.reply(`<@${user}> a fost debanat!`)
 };
