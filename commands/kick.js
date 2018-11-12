@@ -4,7 +4,6 @@ module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!kUser) return message.channel.send("Nu ai mentionat un membru.").then(msg => {msg.delete(5000)});
         let kReason = args.join(" ").slice(22);
-		if(!kReason) return message.channel.send({embed:kickuEmbed})
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(":no_entry_sign: Nu aveți permisiunea pentru a face asta!");
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu puteți să dați afară un moderator sau un administrator!");
 
@@ -18,8 +17,8 @@ module.exports.run =  (bot, message, args) => {
        
       
 
-        let kickChannel = message.guild.channels.find(`name`, "mod-logs");
-        if(!kickChannel) return message.channel.send("Nu găsesc channel-ul `mod-logs`.");
+        let kickChannel = message.guild.channels.find(`name`, "logs");
+        if(!kickChannel) return message.channel.send("Nu găsesc channel-ul `logs`.");
 
         message.guild.member(kUser).kick(kReason)
         kickChannel.send({embed:kickEmbed});
