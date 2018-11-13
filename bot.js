@@ -33,14 +33,14 @@ bot.on("ready", async () => {
 bot.on("message", message => {
   if(message.channel.type === "dm") return
 
-    let prefix = "o!";
-	
-    let args = message.content.slice(prefix.length).trim().split(/ +/g);
-    let cmd = args.shift().toLowerCase();
+    const prefix = "o!";
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
     let sender = message.author;
-    let command;
-
-    let commandfile = bot.commands.get(cmd.slice(prefix.length).trim().split(/ +/g));
+    let args = messageArray.slice(1);
+	
+    if(!message.content.startsWith(prefix)) return;
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
     if(commandfile) commandfile.run(bot, message, args);
     if(!message.content.startsWith(`${prefix}`)) return
 	//COMMANDS
