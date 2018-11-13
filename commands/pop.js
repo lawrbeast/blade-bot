@@ -6,6 +6,7 @@ exports.run = async (client, message, args, tools) => {
     if (bubbles === null) db.set(`bubbles_${message.author.id}`, 0);
     else TotalBubbles = bubbles;
     if (TotalBubbles === undefined) TotalBubbles = 1;
+    if(TotalBubbles === "10") message.channel.send("**Realizare** Felicitari ai spart 10 baloane!")
     db.add(`bubbles_${message.author.id}`, 1)
         const emb = new Discord.RichEmbed()
             .setTitle('Pop!')
