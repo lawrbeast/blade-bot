@@ -11,7 +11,7 @@ module.exports.run =  (bot, message, args) => {
         let kickEmbed = new Discord.RichEmbed()
         .setFooter(`${kUser.id}`)
         .setDescription(`Kick - Case | ${kUser}`)
-        .setColor("#bc2731")
+        .setColor("#cc0000")
         .setTimestamp(new Date())
         .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
