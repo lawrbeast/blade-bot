@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
           .addField('Channel', results[0].channel.title, true)
           .addField('Descriere', results[0].description)
           message.channel.send({embed:ytEmbed});
-        async message.channel.send(`https://youtu.be/${results[0].id}`)
+         message.channel.send(`https://youtu.be/${results[0].id}`)
       })
       .catch(console.log);
 
