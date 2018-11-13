@@ -9,9 +9,10 @@ module.exports.run =  (bot, message, args) => {
         if(!kReason) kReason = "fara motiv"
 
         let kickEmbed = new Discord.RichEmbed()
-        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+        .setFooter(`${kUser.id}`)
         .setDescription(`Kick - Case | ${kUser}`)
         .setColor("#bc2731")
+        .setTimestamp(new Date());
         .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
         .addField("Motiv", kReason, true);
