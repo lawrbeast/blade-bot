@@ -6,7 +6,7 @@ module.exports.run = (bot, message, args) => {
   if(!bUser) return message.channel.send("Nu ai mentionat un membru\n**Exemplu: w!ban @membru.**").then(msg => {msg.delete(5000)});
   let bReason = args.join(" ").slice(22);
   if(!bReason) return message.channel.send("**Te rog sa mentionezi un motiv\nExemplu: w!ban @user Motiv.**");
-  if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send("Nu poti face asta unui administrator.");
+  if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator!");
 
   let banEmbed = new Discord.RichEmbed()
   .setDescription(`Ban Info | Case 筐｢ ${bUser}`)
