@@ -113,9 +113,9 @@ if(cmd === `${prefix}color`){
 	//HEP
 	if(cmd === `${prefix}help`){
 		const embed = new Discord.RichEmbed()
-		.setColor("#0a9678")
+		.setColor("#cc0000")
 		.setTitle("Ti-am dat mai jos toate comenzile!")
-		.setDescription("**Fun**\nd!google - Cu ajutor acestei comenzi poți căuta ceva pe google.\nd!meme - Această comandă arată un meme random.\nd!roll - Această comandă aruncă un zar.\nd!emojify - Această comandă transformă un mesaj în emoji.\nd!gif - Această comandă arată un .GIF random.\nd!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\nd!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\nd!kick - Această comandă dă afară un membru de pe server.\nd!ban - Această comandă banează un membru de pe server.\nd!mute - Această comandă scoate accesul unui membru de a vorbi.\nd!warn - Această comandă avertizează un membru de pe server.\nd!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\n**IN CURAND**")
+		.setDescription("**Fun**\no!youtube - Caută ceva pe youtube\no!google - Cu ajutor acestei comenzi poți căuta ceva pe google.\no!meme - Această comandă arată un meme random.\no!roll - Această comandă aruncă un zar.\no!emojify - Această comandă transformă un mesaj în emoji.\no!gif - Această comandă arată un .GIF random.\no!avatar - Această comandă arată avatarul tău sau al unui membru.\n\n**Moderare**\no!userinfo - Această comandă îți arată informațiile tale sau ale unui membru.\no!kick - Această comandă dă afară un membru de pe server.\no!ban - Această comandă banează un membru de pe server.\no!mute - Această comandă scoate accesul unui membru de a vorbi.\no!warn - Această comandă avertizează un membru de pe server.\no!serverinfo - Această comandă îți arată informațiile despre server.\n\n**Self Assignable Roles**\n**IN CURAND**")
 		.setFooter("Laurențiu șeful meu.")
 		message.channel.send({embed})
 		return;
