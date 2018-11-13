@@ -12,7 +12,7 @@ module.exports.run =  (bot, message, args) => {
         .setFooter(`${kUser.id}`)
         .setDescription(`Kick - Case | ${kUser}`)
         .setColor("#bc2731")
-        .setTimestamp(new Date());
+        .setTimestamp(new Date())
         .addField("Membru", kUser, true)
         .addField("Moderator", message.author, true)
         .addField("Motiv", kReason, true);
