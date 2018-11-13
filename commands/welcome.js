@@ -1,6 +1,8 @@
-const Discord = require("discord.js")
+module.exports.run = async (bot, message, args) => { // Run the command when a command is called
+	const send = require(`quick.hook`)
+	const Discord = require(`discord.js`)
 
-exports.run = (bot, message, args) => {
+        // Admin Perms
          let ownerEmbed = new Discord.RichEmbed()
          .setDescription(`**This command requires the Administrator Permissions**`)
          .setFooter(`[HSS] Hinami Security System`)
@@ -22,15 +24,16 @@ exports.run = (bot, message, args) => {
                      if (!args.slice(2, 1000, args[2]).join(' ') === 'NONE') return message.channel.send(mentionEmbed) // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
                 
                     // Fetch the new channel they mentioned
-                     let newMessage;
-                     if (args.slice(2, 1000, args[2]).join(' ') === 'NONE') newMessage = ''; // If they wrote the word none, it sets newMessage as empty.
-                     else newMessage = args.slice(2, 1000, args[2]).join(' '); // If they didn't write none, set what they wrote as the message
-                
+                     let newChannel = ''
+                     const errorReport = bot.channels.get(`453597878888300544`)
+                     if (args.slice(2, 1000, args[2]).join(' ') === 'NONE') newMessage = '' // If they wrote the word none, it sets newMessage as empty.
+                     else newMessage = args.slice(2, 1000, args[2]).join(' ') // If they didn't write none, set what they wrote as the message
+                     if(`${message.mentions.channels.first()}` == `undefined`) return
                      let channelEmbed = new Discord.RichEmbed()
                      .setDescription(`**Successfully updated logging channel to ${message.mentions.channels.first()}**`)
                 
                     // Update Channel
-                     db.set(`pmessageChannel_${message.guild.id}`, newChannel).then(i => {
+                     db.set(`pmessageChannel_${message.guild.id}`, `${message.mentions.channels.first().id}`).then(i => {
                         message.channel.send(channelEmbed) // Finally, send in chat that they updated the channel.
                      })
                 }catch(err) {console.log(`Error with setting channel\n${err}`)}
@@ -109,8 +112,6 @@ exports.run = (bot, message, args) => {
                 .setDescription(`**<>** Settings Menu [SET] **<>**\n\n**channel** - -!settings set channel #channel\n**dmessages** - -!settings set dmessages <Direct Message For Users Joining>\n**jmessages** - -!settings set jmessages <Joining Message For Users Joining>\n**lmessages** - -!settings set lmessages <Leaving Message For Users Depating>`)
                 message.channel.send(settingsEmbed)
              }
-
-}
 exports.help = {
   name: "welcome"
 }
