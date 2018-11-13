@@ -16,6 +16,7 @@ exports.run = async (client, message, args, tools) => {
             embed: emb
         })
     })
+    }
 
 exports.help = {
     name: "pop"   
