@@ -1,7 +1,7 @@
 const ms = require('ms');
 
 exports.run = (client, message, args, tools) => {
-    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('Sorry, you don\'t have permission to lockdown or unlock!')
+    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('Nu permisiunile necesare!')
         .then(msg => msg.delete({
             timeout: 10000
         }));
