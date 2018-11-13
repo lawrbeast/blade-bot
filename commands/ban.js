@@ -10,7 +10,7 @@ module.exports.run = (bot, message, args) => {
 
   let banEmbed = new Discord.RichEmbed()
   .setDescription(`Ban Info | Case 筐｢ ${bUser}`)
-  .setColor("#0a9678")
+  .setColor("#cc0000")
   .addField("User", bUser, true)
   .addField("Moderator", message.author.username, true)
   .addField("Motiv", bReason, true)
