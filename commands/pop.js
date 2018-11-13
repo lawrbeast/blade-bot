@@ -9,7 +9,7 @@ exports.run = async (client, message, args, tools) => {
     db.add(`bubbles_${message.author.id}`, 1)
         const emb = new Discord.RichEmbed()
             .setTitle('Pop!')
-            .setThumbnail('https://images-na.ssl-images-amazon.com/images/I/81hVR8PKVDL.png')
+            .setThumbnail('https://www.logolynx.com/images/logolynx/c6/c62affc16a6d5d199dd36c6723b513c8.png')
             .setColor(0x00FFBF)
             .setDescription(`Ai spart un balon!\nIn total ai spart: ${TotalBubbles + 1} baloane!`)
         message.channel.send({embed:emb});
