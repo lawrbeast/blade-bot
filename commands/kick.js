@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Nu ai permisiunile necesare.");
-        if(!kUser) return message.channel.send("Nu ai mentionat un membru.").then(msg => {msg.delete(5000)});
+        if(!kUser) return message.channel.send("Nu ai mentionat un membru\n**Exemplu: o!kick @membru**").then(msg => {msg.delete(5000)});
         let kReason = args.join(" ").slice(22);
-        if(!kReason) return message.channel.send("Nu ai mentionat un motiv.").then(msg => {msg.delete(5000)})
-        if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu puteți să dați afară un moderator sau un administrator!");
+        if(!kReason) return message.channel.send("Nu ai mentionat un motiv\n**Exemplu: o!kick @membru motiv**").then(msg => {msg.delete(5000)})
+        if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator!");
 
         let kickEmbed = new Discord.RichEmbed()
         .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
