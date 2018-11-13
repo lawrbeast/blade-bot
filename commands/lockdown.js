@@ -8,7 +8,7 @@ exports.run = (client, message, args, tools) => {
     if (!client.lockit) client.lockit = [];
     let time = args.join(' ');
     let validUnlocks = ['release', 'unlock'];
-    if (!time) return message.channel.send('You must set a duration for the lockdown in either hour(s), minute(s) or second(s)');
+    if (!time) return message.channel.send('Te rog mentioneaza un timp\n**Exemplu: o!lockdown 1s(secunda),1m(minut),1h(ora)');
 
     if (validUnlocks.includes(time)) {
         message.channel.overwritePermissions(message.guild.id, {
