@@ -4,6 +4,7 @@ require("moment-duration-format");
 const bot = new Discord.Client();
 const db = require("quick.db");
 const fs = require("fs");
+const ffmpeg = require("ffmpeg-binaries")
 bot.commands = new Discord.Collection();
 // COMMAND HANDLER 
 fs.readdir("./commands", (err, files) => {
