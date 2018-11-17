@@ -18,6 +18,7 @@
       "ms": "^2.1.1",
       "moment-duration-format": "2.2.2",
       "request": "2.81.0",
+      "ffmpeg-binaries": "^4.0.0",
       "ytdl-core": "^0.28.0"
       }
      }
