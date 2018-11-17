@@ -20,7 +20,7 @@ exports.run = async (client, message, args, ops) => {
     let dispatcher = await connection.playStream(ytdl(args[0], {
         filter: 'audioonly'
     }));
-    message.channel.send(`🎵 Now playing: ${info.title}\n⏲ Length: ${audioFormats.length} minutes`);
+    message.channel.send(`🎵 Now playing: ${info.title}`);
 };
 
 exports.help = {
