@@ -1,6 +1,4 @@
 const ytdl = require('ytdl-core');
-const ffmpeg = require('ffmpeg-binaries')
-const fs = require ('fs')
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args, ops) => {
