@@ -20,9 +20,9 @@ exports.run = async (bot, message, args, ops) => {
         }));
         message.channel.send(`🎵 Now playing: ${info.title}`);
   
-         dispatcher.on('end', () => {
-              message.guild.me.voiceChannel.leave();
-          })
+        dispatcher.on('end', () => {
+            message.guild.me.voiceChannel.leave();
+        })
     };
 exports.help = {
   name:"play"
