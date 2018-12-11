@@ -18,7 +18,10 @@ exports.run = async (bot, message, args, ops) => {
     let dispatcher = await connection.playStream﻿(ytdl(args[0], {
             filter: 'audioonly'
         }));
-        message.channel.send(`🎵 Now playing: ${info.title}`);
+  let playembed = new Discord.RichEmbed()
+  .setColor('#cc0000')
+  .setDescription('Now playing: ${info.title}')
+        message.channel.send({embed:playembed});
   
         dispatcher.on('end', () => {
             message.guild.me.voiceChannel.leave();
