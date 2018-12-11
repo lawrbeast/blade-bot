@@ -20,7 +20,7 @@ exports.run = async (bot, message, args, ops) => {
         }));
   let playembed = new Discord.RichEmbed()
   .setColor('#cc0000')
-  .setDescription('Now playing: ${info.title}')
+  .setDescription(`Now playing: ${info.title}`)
         message.channel.send({embed:playembed});
   
         dispatcher.on('end', () => {
