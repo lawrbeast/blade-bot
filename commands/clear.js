@@ -1,3 +1,4 @@
+
 const Discord = require("discord.js");
 
 module.exports.run = (bot, message, args) => {
@@ -7,13 +8,10 @@ module.exports.run = (bot, message, args) => {
  .setColor("#bc2731")
  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send({embed:mspEmbed});
  let clearEmbed = new Discord.RichEmbed()
- .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
- .setColor("#bc2731")
- .addField("Folosește ", "w!clear număr mesaje");
+ .setTitle('Comanda: o!clear')
+ .setDescription('**Descriere:** Sterge un numar de mesaje\n**Folosire:** o!clear [numar mesaje]\n**Exemplu:** o!clear 15')
  if(!args[0]) return message.channel.send({embed:clearEmbed});
- message.channel.bulkDelete(args[0]).then(() => {
-     message.channel.send.then(msg => msg.delete(10000));
- });
+ message.channel.bulkDelete(args[0]);
 }
 module.exports.help = {
     name: "clear"
