@@ -9,8 +9,8 @@ module.exports.run = async (bot, message, args) => {
     let mmEmbed = new Discord.RichEmbed()
     .setTitle("Comanda: o!mute")
     .setDescription('**Descriere:** Interzice accesul de a scrie al unui membru\n**Folosire:** o!mute @membru [timp(s,m,d,h)] [motiv]\n**Exemplu:** o!mute @qLau 15m motiv opțional')
-    if (!tomute) return message.channel.send(mmEmbed);
-    if (tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator.");
+    if (!tomute) return message.channel.send({mmEmbed});
+    if (tomute.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator.");
     let reason = args.slice(2).join(" ");
     if (!reason) reason = "fara motiv"
 
@@ -49,7 +49,7 @@ module.exports.run = async (bot, message, args) => {
 
     let incidentschannel = message.guild.channels.find(`name`, "logs");
     if (!incidentschannel) return message.reply("Nu ai creat canalul, logs.");
-    incidentschannel.send(muteEmbed);
+    incidentschannel.send({muteEmbed});
     await (tomute.addRole(muterole.id));
 
     setTimeout(function() {
@@ -61,7 +61,7 @@ module.exports.run = async (bot, message, args) => {
        .addField("Membru", tomute, true)
        .addField("Moderator", message.author, true)
        .addField("Motiv", "Auto", true)
-        incidentschannel.send(unmuteEmbed);
+        incidentschannel.send({unmuteEmbed});
     }, ms(mutetime));
 }
 exports.help = {
