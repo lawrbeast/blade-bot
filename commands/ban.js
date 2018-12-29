@@ -4,7 +4,7 @@ module.exports.run = (bot, message, args) => {
   let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   let bEmbed = new Discord.RichEmbed()
   .setTitle('Comanda: o!ban')
-  .setDescription('**Descriere:** Banează un membru\n**Folosire:** o!ban @membru motiv\n**Exemplu:** o!ban @qLau motiv opțional')
+  .setDescription('**Descriere:** Banează un membru\n**Folosire:** o!ban @membru [motiv]\n**Exemplu:** o!ban @qLau motiv opțional')
   if(!bUser) return message.channel.send({embed:bEmbed})
   if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Nu ai permisiunile necesare.");
   if(bUser.hasPermission("BAN_MEMBERS")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator!");
