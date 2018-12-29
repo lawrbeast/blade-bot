@@ -4,7 +4,7 @@ module.exports.run =  (bot, message, args) => {
         let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         let kEmbed = new Discord.RichEmbed()
         .setTitle('Comanda: o!kick')
-        .setDescription('**Descriere:** Alungă un membru de pe server\n**Folosire:** o!kick @membru motiv\n**Exemplu:** o!kick @qLau motiv opțional')
+        .setDescription('**Descriere:** Alungă un membru de pe server\n**Folosire:** o!kick @membru [motiv]\n**Exemplu:** o!kick @qLau motiv opțional')
         if(!kUser) return message.channel.send({embed:kEmbed})
         if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Nu ai permisiunile necesare.");
         if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu poți face asta unui administrator!");
