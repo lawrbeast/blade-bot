@@ -1,43 +1,69 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 
-module.exports.run =  (bot, message, args) => {
-    let member = message.mentions.members.first();
-    if(!member) return message.reply("Nu ai specificat membrul.");
-    let muteRole = message.guild.roles.find("name", "Muted");
-    if(!muteRole) return message.reply("Nu ai creat role-ul Muted.");
-    let params = message.content.split(" ").slice(1);
-    let time = params[1];
-    if(!time) return message.reply("Nu ai specificat timpul.");
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu aveți permisiunea pentru a face asta!");
-    if(member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Acest membru este un moderator sau un administrator!");
+module.exports.run = async (bot, message, args) => {
 
-    member.addRole(muteRole.id);
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Nu ai permisiunile necesare.");
+    let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    let mmEmbed = new Discord.RichEmbed()
+    .setTitle("Comanda: o!mute")
+    .setDescription('**Descriere:** Interzice accesul de a scrie al unui membru\n**Folosire:** o!mute @membru [timp(s,m,d,h)] [motiv]\n**Exemplu:** o!mute @qLau 15m motiv opțional')
+    if (!tomute) return message.channel.send(mmEmbed);
+    if (tomute.hasPermission("MANAGE_MESSAGES")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator.");
+    let reason = args.slice(2).join(" ");
+    if (!reason) reason = "fara motiv"
+
+    let muterole = message.guild.roles.find(`name`, "muted");
+    //start of create role
+    if (!muterole) {
+        try {
+            muterole = await message.guild.createRole({
+                name: "muted",
+                color: "#000000",
+                permissions: []
+            })
+            message.guild.channels.forEach(async (channel, id) => {
+                await channel.overwritePermissions(muterole, {
+                    SEND_MESSAGES: false,
+                    ADD_REACTIONS: false
+                });
+            });
+        } catch (e) {
+            console.log(e.stack);
+        }
+    }
+    //end of create role
+    let mutetime = args[1];
+    if (!mutetime) return message.reply("Nu ai precizat timpul.");
+
+    message.delete().catch(O_o => {});
+
     let muteEmbed = new Discord.RichEmbed()
 	.setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
     .setDescription(`MUTE INFO`)
     .setColor("#bc2731")
-    .addField("Membru", member, true)
+    .addField("Membru", tomute, true)
     .addField("Moderator", message.author, true)
-    .addField("Durata", time, true)
-    let muteChannel = message.guild.channels.find(`name`, "mod-logs");
-      muteChannel.send({embed:muteEmbed})
+    .addField("Durata", mutetime, true)
+
+    let incidentschannel = message.guild.channels.find(`name`, "logs");
+    if (!incidentschannel) return message.reply("Nu ai creat canalul, logs.");
+    incidentschannel.send(muteEmbed);
+    await (tomute.addRole(muterole.id));
 
     setTimeout(function() {
-      member.removeRole(muteRole.id)
-      let unmuteEmbed = new Discord.RichEmbed()
-	  .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
-      .setDescription(`UNMUTE INFO`)
-      .setColor("#bc2731")
-      .addField("Membru", member, true)
-      .addField("Moderator", message.author, true)
-      .addField("Motiv", "Auto", true)
-      let unmuteChannel = message.guild.channels.find(`name`, "mod-logs");
-        unmuteChannel.send({embed:unmuteEmbed})
-    }, ms(time));
-
+        tomute.removeRole(muterole.id);
+        let unmuteEmbed = new Discord.RichEmbed()
+        .setFooter(`${message.guild.name}`, `${message.guild.iconURL}`)
+       .setDescription(`UNMUTE INFO`)
+       .setColor("#bc2731")
+       .addField("Membru", tomute, true)
+       .addField("Moderator", message.author, true)
+       .addField("Motiv", "Auto", true)
+        incidentschannel.send(unmuteEmbed);
+    }, ms(mutetime));
 }
-
-module.exports.help = {
-    name: "mute"
+exports.help = {
+  name: "mute"
 }
