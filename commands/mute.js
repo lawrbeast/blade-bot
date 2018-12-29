@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("Comanda: o!mute")
     .setDescription('**Descriere:** Interzice accesul de a scrie al unui membru\n**Folosire:** o!mute @membru [timp(s,m,d,h)] [motiv]\n**Exemplu:** o!mute @qLau 15m motiv opțional')
     if (!tomute) return message.channel.send({mmEmbed});
-    if (tomute.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator.");
+    if (tomute.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Nu poți face asta unui administrator!");
     let reason = args.slice(2).join(" ");
     if (!reason) reason = "fara motiv"
 
