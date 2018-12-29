@@ -2,9 +2,12 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
         let wUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        let wEmbed = new Discord.RichEmbed()
+        .setTitle('Commanda: o!warn')
+        .setDescription('**Descriere:** Avertizează un membru\n**Folosire:** o!warn @membru [motiv]\n**Exemplu:** o!warn @qLau motiv opțional')
+        if(!wUser) return message.channel.send({embed:wEmbed})
         if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Nu ai permisiunile necesare.");
-        if(wUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Nu poti face asta unui administrator!");
-        if(!wUser) return message.channel.send("Nu ai menționat un membru\n**Exemplu: o!warn @user**").then(msg => {msg.delete(5000)});
+        if(wUser.hasPermission("ADMINISTRATOR")) return message.channel.send(":no_entry_sign: Nu poți face asta unui administrator!");
         let wReason = args.join(" ").slice(22)
         if(!wReason) wReason = "fara motiv"
 
