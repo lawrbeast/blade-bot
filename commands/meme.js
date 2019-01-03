@@ -5,7 +5,7 @@ exports.run = async (bot, message, args, level) => { // eslint-disable-line no-u
   meme(function(data) {
   const embed = new Discord.RichEmbed()
   .setTitle(data.title[0])
-  .setColor("#0a9678")
+  .setColor("#111111")
   .setImage(data.url[0])
   message.channel.send({embed});
   })};
